@@ -1,0 +1,42 @@
+{
+  "ecmaFeatures": {
+    "jsx": true // Allows for the parsing of JSX
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module" // Allows for the use of imports
+  },
+  "plugins": ["mocha", "prettier", "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": 0, // We decide when to ignore you, not the other way around
+    "@typescript-eslint/explicit-member-accessibility": [
+      "error",
+      { "accessibility": "no-public" }
+    ],
+    "no-async-promise-executor": 0, // Will modify code base to restore this in future
+    "prettier/prettier": ["error"],
+    "@typescript-eslint/member-delimiter-style": 0, // We defer to Prettier here
+    "@typescript-eslint/no-empty-interface": 0, // We're not that picky yet; we're still defining things
+    "@typescript-eslint/no-explicit-any": 0, // In the future we can disable this
+    "@typescript-eslint/no-var-requires": 0, // We have conditional requires
+    "react/display-name": 0, // ESLint does not understand the render props pattern: https://reactjs.org/docs/render-props.html
+    "react/prop-types": 0,
+    "@typescript-eslint/semi": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    }
+  }
+}

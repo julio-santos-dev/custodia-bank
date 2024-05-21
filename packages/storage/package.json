@@ -1,0 +1,8 @@
+{
+  "name": "@packages/storage",
+  "private": true,
+  "main": "index.ts",
+  "dependencies": {
+    "store2": "^2.12.0"
+  }
+}
